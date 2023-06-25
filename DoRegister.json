@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "35c39f51-d06c-44f3-974a-42071602e9f9",
+		"name": "DoRegister",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28036198",
+		"_collection_link": "https://winter-escape-73936.postman.co/workspace/BusyProject~4458a5fd-09cb-4e55-a799-4b2d15b750c0/collection/28036198-35c39f51-d06c-44f3-974a-42071602e9f9?action=share&creator=28036198&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Inability to registrer with an existing User\", function () {\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.log(pm.response);\r",
+							"    console.log(jsonData);\r",
+							"\r",
+							"    pm.expect(jsonData.message).to.eql(\" Текущее ФИО Cake уже есть в базе\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "Sunny@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Cake",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "717",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/doregister",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create company",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Includ for part wold\", function () { \r",
+							"    pm.expect(jsonData.type).to.include(\"error\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"value": "jpg",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Cookes",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "717",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email_owner",
+							"value": "Poll@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "company_name",
+							"value": "Cookes2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "company_type",
+							"value": "dff",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "company_users",
+							"value": "Cookes",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/addavatar/?email=test@tset.st4",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"addavatar",
+						""
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@tset.st4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test with keyword \"let\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test name\", function () {\r",
+							"   let jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.type).to.eql(\"error\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "Sunny@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Cake",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "717",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/doregister",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test with keyword \"const\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    console.log(jsonData);   \r",
+							"    pm.expect(jsonData.type).to.eql(\"error\");\r",
+							"        console.log(jsonData.message);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "Sunny@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Cake",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "717",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/doregister",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checking content body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"User-agent: *\\nDisallow: /deny\\n\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/robots.txt",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"robots.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checking the content of the response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).\r",
+							"    to.include(\"User-agent:\");\r",
+							"});\r",
+							"console.log(pm.response.text())"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/robots.txt",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"robots.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checking the body is present",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body is present\", function () {\r",
+							"pm.response.to.have.body();\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept": true,
+					"user-agent": true,
+					"host": true,
+					"accept-encoding": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/robots.txt",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"robots.txt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
